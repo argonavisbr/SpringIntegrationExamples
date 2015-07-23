@@ -39,7 +39,7 @@
 
 	<int-twitter:search-inbound-channel-adapter
 		twitter-template="twitterTemplate" query="#thedevconf OR #tdc2015" id="raw-tweets">
-		<int:poller fixed-rate="60000" max-messages-per-poll="10" />
+		<int:poller fixed-rate="60000" max-messages-per-poll="10" /> <!-- Há um limite de 100 acessos por hora, portanto nao use um valor muito baixo -->
 	</int-twitter:search-inbound-channel-adapter>
 
 	<int:transformer input-channel="raw-tweets"
